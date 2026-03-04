@@ -5,15 +5,19 @@ import { spaces } from "../../../../constants/spaces";
 import { radius } from "../../../../constants/radius";
 import { brands } from "../../../../data/brands";
 
-export default function BrandsList({
+export default function BrandsItem({
   item,
   index,
   selectedBrand,
   setSelectedBrand,
 }) {
+  const onPress = () => {
+    setSelectedBrand(item.name);
+  };
+
   return (
     <TouchableOpacity
-      onPress={() => setSelectedBrand(item.name)}
+      onPress={onPress}
       style={{
         marginLeft: index === 0 ? spaces.LG : 0,
         marginRight: index === brands.length - 1 ? spaces.LG : 0,

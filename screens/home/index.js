@@ -4,8 +4,12 @@ import { colors } from "../../constants/colors";
 import SearchSection from "./searchSection/index";
 import NewsSection from "./newsSection/index";
 import ListSection from "./listSection/index";
+import { useState } from "react";
 
 export default function HomeScreen() {
+  const [inputValue, setInputValue] = useState("");
+  const [selectedBrand, setSelectedBrand] = useState("nike");
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
@@ -16,9 +20,14 @@ export default function HomeScreen() {
           backgroundColor: "#000000",
         }}
       />
-      <SearchSection />
-      <ListSection />
-      <NewsSection />
+      <SearchSection
+        InputValue={inputValue}
+        setInputValue={setInputValue}
+        selectedBrand={selectedBrand}
+        setSelectedBrand={setSelectedBrand}
+      />
+      <ListSection selectedBrand={selectedBrand} inputValue={inputValue} />
+      <NewsSection selectedBrand={selectedBrand} />
       <View
         style={{
           width: "100%",

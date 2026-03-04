@@ -7,7 +7,6 @@ import TextBoldMd from "../../../../ui-components/texts/TextBoldMd";
 import TextBoldXl from "../../../../ui-components/texts/TextBoldXl";
 
 export default function HorizontalCard({ item }) {
-  console.log(item.items[0].image);
   return (
     <View style={styles.container}>
       <View style={styles.descriptionContainer}>
