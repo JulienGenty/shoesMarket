@@ -16,6 +16,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 240,
     paddingVertical: spaces.LG,
-    borderWidth: 1,
   },
 });
